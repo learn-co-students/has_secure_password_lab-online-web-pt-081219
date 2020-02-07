@@ -1,0 +1,46 @@
+a signup page for users
+
+Users migration 
+ - name:string 
+ - pasword_digest:string 
+ - user_id:integer
+User model 
+    has_secure_password 
+Users controller 
+    new
+    create
+    show
+Users views 
+    - signup page 
+        - sign up form
+            - create the user 
+            - has_secure_password will salt and hash password automatically
+    - login page
+        - log in form
+        - redirects back to log in if password incorrect
+    - user show page
+        - displays user name <h1> <%= @user.name %> </h1>
+
+- create user and model migrations 
+
+`rails g resource user name:string password_digest:string --no-test-framework`
+    - created user model 
+        - i know i need has_secure_password in this model so I will go ahead and put it there
+    - created application record model 
+    - created migration 
+        - always check if migration is correct 
+    - creates users helper file
+    - creates users_controller
+    - creates users assets and css files 
+    - creates a users view folder 
+
+`run migration for both browser and test_env` 
+
+- create new route in controller `get "/new", to: "user#new"`
+- route was created by resourcce generator 
+- created form for sign up 
+
+
+
+    
+    
